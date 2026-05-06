@@ -175,7 +175,9 @@ input,textarea{
 
     .menu-btn{display:block;}
 }
-
+html {
+  scroll-behavior: smooth;
+}
 </style>
 </head>
 
@@ -339,7 +341,9 @@ Réponse garantie en moins de 24h ⚡
 </section>
     
 <!-- WHATSAPP -->
-<a class="whatsapp" href="https://wa.me/243850406200">💬</a>
+<a class="whatsapp" href="https://wa.me/243850406200?text=Bonjour%20je%20veux%20un%20site%20web%20professionnel%20💻">
+💬
+</a>
 
 <!-- SCRIPT -->
 <script>
@@ -350,16 +354,21 @@ function toggleMenu(){
 }
 
 function sendWhatsApp(){
+
     let nom = document.getElementById('nom').value;
     let email = document.getElementById('email').value;
     let message = document.getElementById('message').value;
 
+    if(nom === "" || email === "" || message === ""){
+        alert("⚠️ Veuillez remplir tous les champs");
+        return;
+    }
+
     let url = "https://wa.me/243850406200?text="
-    + "🚀 NOUVELLE DEMANDE SITE WEB%0A%0A"
+    + "🚀 Nouvelle demande site web%0A%0A"
     + "Nom: " + nom + "%0A"
     + "Email: " + email + "%0A"
-    + "Projet: " + message + "%0A%0A"
-    + "👉 Répondre rapidement svp";
+    + "Projet: " + message;
 
     window.open(url);
 }
@@ -374,6 +383,20 @@ function devis(){
 
     window.open(url);
 }
+    let links = document.querySelectorAll(".nav-links a");
+
+links.forEach(link => {
+    link.addEventListener("click", () => {
+        document.getElementById("menu").style.display = "none";
+    });
+})a
+    let links = document.querySelectorAll(".nav-links a");
+
+links.forEach(link => {
+    link.addEventListener("click", () => {
+        document.getElementById("menu").style.display = "none";
+    });
+});
 </script>
 
 </body>

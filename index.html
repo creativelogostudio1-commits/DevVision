@@ -404,6 +404,7 @@ function sendWhatsApp(){
 
     window.open(url);
 }
+
 function devis(){
     let type = document.getElementById("type").value;
     let delai = document.getElementById("delai").value;
@@ -415,21 +416,16 @@ function devis(){
 
     window.open(url);
 }
-    let links = document.querySelectorAll(".nav-links a");
 
-links.forEach(link => {
-    link.addEventListener("click", () => {
-        document.getElementById("menu").style.display = "none";
-    });
-})a
-    let links = document.querySelectorAll(".nav-links a");
+/* fermeture menu mobile propre */
+let links = document.querySelectorAll(".nav-links a");
 
 links.forEach(link => {
     link.addEventListener("click", () => {
         document.getElementById("menu").style.display = "none";
     });
 });
-</script>
 
+</script>
 </body>
     </html>

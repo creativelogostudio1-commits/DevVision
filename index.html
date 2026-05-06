@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DevVision</title>
+
+<style>
+body {
+    margin:0;
+    font-family:Arial;
+    background:#020617;
+    color:white;
+}
+
+/* NAV */
+nav {
+    display:flex;
+    justify-content:space-between;
+    padding:15px 40px;
+    position:sticky;
+    top:0;
+    background:rgba(0,0,0,0.7);
+    backdrop-filter:blur(10px);
+}
+
+nav a {
+    color:white;
+    margin:10px;
+    text-decoration:none;
+}
+
+/* HERO */
+.hero {
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    padding:60px;
+}
+
+.hero-text {
+    flex:1;
+}
+
+.hero-text h1 {
+    font-size:45px;
+}
+
+.hero-text span {
+    color:#38bdf8;
+}
+
+.btn {
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 20px;
+    background:#38bdf8;
+    color:black;
+    border-radius:8px;
+    text-decoration:none;
+}
+
+.btn-outline {
+    border:1px solid #38bdf8;
+    padding:12px 20px;
+    border-radius:8px;
+    margin-left:10px;
+}
+
+/* HERO IMAGE */
+.hero img {
+    flex:1;
+    max-width:500px;
+    border-radius:10px;
+}
+
+/* PROJECTS */
+.projects {
+    padding:50px;
+    text-align:center;
+}
+
+.cards {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+
+.card {
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+    width:300px;
+    transition:0.3s;
+}
+
+.card:hover {
+    transform:scale(1.05);
+}
+
+.card img {
+    width:100%;
+    border-radius:10px;
+}
+
+/* FEATURES */
+.features {
+    display:flex;
+    justify-content:space-around;
+    padding:40px;
+    flex-wrap:wrap;
+}
+
+/* WHATSAPP */
+.whatsapp {
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    padding:15px;
+    border-radius:50px;
+    color:white;
+    text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+<div><b>DevVision</b></div>
+<div>
+<a href="#">Accueil</a>
+<a href="#projects">Projets</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
+<div class="hero-text">
+<p>💻 Développeur Web</p>
+<h1>Je construis des expériences <span>web modernes</span></h1>
+
+<a class="btn" href="#projects">Voir mes projets</a>
+<a class="btn-outline" href="#">Télécharger CV</a>
+
+</div>
+
+<img src="images/projet-web.jpg">
+
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="projects">
+
+<h2>Mes Projets</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="images/profil-dev.jpg">
+<h3>Portfolio</h3>
+<p>Site professionnel</p>
+<a class="btn" href="#">Voir</a>
+</div>
+
+<div class="card">
+<img src="images/projet-web.jpg">
+<h3>Dashboard</h3>
+<p>Interface moderne</p>
+<a class="btn" href="#">Voir</a>
+</div>
+
+<div class="card">
+<img src="images/banniere-cservice.jpg">
+<h3>E-commerce</h3>
+<p>Boutique en ligne</p>
+<a class="btn" href="#">Voir</a>
+</div>
+
+</div>
+
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+<div>⚡ Rapide</div>
+<div>📱 Responsive</div>
+<div>💻 Code propre</div>
+<div>🚀 Livraison rapide</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="padding:50px; text-align:center;">
+<h2>Contact</h2>
+<input placeholder="Nom"><br><br>
+<input placeholder="Email"><br><br>
+<textarea placeholder="Message"></textarea><br><br>
+<button class="btn">Envoyer</button>
+</section>
+
+<!-- WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/243848681325">WhatsApp</a>
+
+</body>
+</html>

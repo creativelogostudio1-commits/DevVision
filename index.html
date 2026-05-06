@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DevVision ULTRA</title>
+<title>DevVision ULTRA PRO</title>
 
 <style>
 
@@ -55,7 +55,8 @@ nav h2{color:#38bdf8;}
 }
 
 .hero-text{flex:1;}
-.hero-text h1{font-size:50px;}
+.hero-text h1{font-size:45px;}
+
 .hero-text span{color:#38bdf8;}
 
 .btn{
@@ -66,21 +67,11 @@ nav h2{color:#38bdf8;}
     color:black;
     border-radius:8px;
     text-decoration:none;
+    font-weight:bold;
 }
 
-.btn-outline{
-    border:1px solid #38bdf8;
-    padding:12px 25px;
-    border-radius:8px;
-    margin-left:10px;
-    color:#38bdf8;
-    text-decoration:none;
-}
-
-.hero img{
-    flex:1;
-    max-width:500px;
-    border-radius:15px;
+.btn:hover{
+    transform:scale(1.05);
 }
 
 /* SERVICES */
@@ -135,6 +126,19 @@ nav h2{color:#38bdf8;}
     border-radius:10px;
 }
 
+/* AVIS CLIENTS */
+.testimonials{
+    padding:60px;
+    text-align:center;
+}
+
+.testimonial{
+    background:#0f172a;
+    padding:20px;
+    margin:15px;
+    border-radius:10px;
+}
+
 /* CONTACT */
 input,textarea{
     width:80%;
@@ -144,7 +148,7 @@ input,textarea{
     border:none;
 }
 
-/* WHATSAPP */
+/* WHATSAPP FLOAT */
 .whatsapp{
     position:fixed;
     bottom:20px;
@@ -154,6 +158,7 @@ input,textarea{
     border-radius:50px;
     text-decoration:none;
     color:white;
+    font-size:20px;
 }
 
 /* MOBILE */
@@ -194,11 +199,12 @@ input,textarea{
 <section class="hero">
 
 <div class="hero-text">
-<p>💻 Développeur Web</p>
+<p>💻 Développeur Web à Lubumbashi</p>
 <h1>Je crée des solutions <span>digitales puissantes</span></h1>
 
-<a class="btn" href="#projects">Voir mes projets</a>
-<a class="btn-outline" href="#">Télécharger CV</a>
+<p>Sites web modernes, rapides et optimisés pour attirer des clients.</p>
+
+<a class="btn" href="#contact">🚀 Obtenir un devis</a>
 </div>
 
 <img src="images/projet-web.jpg">
@@ -211,20 +217,20 @@ input,textarea{
 
 <div class="service-grid">
 
-<div class="service" onclick="alert('Création de site professionnel')">
-🌐 Création de site web
+<div class="service">
+🌐 Création de site web professionnel
 </div>
 
-<div class="service" onclick="alert('Applications JavaScript')">
-⚙️ Applications Web
+<div class="service">
+⚙️ Applications Web modernes
 </div>
 
-<div class="service" onclick="alert('Design moderne')">
-🎨 UI/UX Design
+<div class="service">
+🎨 Design UI/UX premium
 </div>
 
-<div class="service" onclick="alert('Gestion réseaux')">
-📱 Réseaux sociaux
+<div class="service">
+📱 Gestion réseaux sociaux
 </div>
 
 </div>
@@ -238,29 +244,43 @@ input,textarea{
 
 <div class="card">
 <img src="images/profil-dev.jpg">
-<h3>Portfolio</h3>
+<h3>Portfolio professionnel</h3>
 </div>
 
 <div class="card">
 <img src="images/projet-web.jpg">
-<h3>Dashboard</h3>
+<h3>Dashboard admin</h3>
 </div>
 
 <div class="card">
 <img src="images/banniere-cservice.jpg">
-<h3>C-Service</h3>
+<h3>Site C-Service</h3>
 </div>
 
 </div>
 </section>
 
+<!-- AVIS CLIENTS -->
+<section class="testimonials">
+<h2>⭐ Avis Clients</h2>
+
+<div class="testimonial">
+<p>“Très professionnel, mon business a évolué rapidement !”</p>
+</div>
+
+<div class="testimonial">
+<p>“Site rapide et design moderne, je recommande !”</p>
+</div>
+
+</section>
+
 <!-- CONTACT -->
 <section id="contact" style="padding:60px;text-align:center;">
-<h2>Contact</h2>
+<h2>📩 Demande de devis</h2>
 
-<input placeholder="Nom"><br>
-<input placeholder="Email"><br>
-<textarea placeholder="Message"></textarea><br>
+<input id="nom" placeholder="Nom"><br>
+<input id="email" placeholder="Email"><br>
+<textarea id="message" placeholder="Votre projet..."></textarea><br>
 
 <button class="btn" onclick="sendWhatsApp()">Envoyer via WhatsApp</button>
 
@@ -278,10 +298,15 @@ function toggleMenu(){
 }
 
 function sendWhatsApp(){
-    let nom = document.querySelector('input').value;
-    let message = document.querySelector('textarea').value;
+    let nom = document.getElementById('nom').value;
+    let email = document.getElementById('email').value;
+    let message = document.getElementById('message').value;
 
-    let url = "https://wa.me/243850406200?text=Nom:"+nom+" Message:"+message;
+    let url = "https://wa.me/243850406200?text="
+    + "Nom: " + nom + "%0A"
+    + "Email: " + email + "%0A"
+    + "Projet: " + message;
+
     window.open(url);
 }
 

@@ -178,6 +178,18 @@ input,textarea{
 html {
   scroll-behavior: smooth;
 }
+    .service, .card, .testimonial {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 </style>
 </head>
 
@@ -268,6 +280,18 @@ html {
 <p>✔ Prix accessibles pour entreprises locales</p>
 
 </section>
+    <section style="padding:60px;text-align:center;background:#0f172a;">
+<h2>⚙️ Comment je travaille</h2>
+
+<div style="margin-top:20px;">
+
+<p>1️⃣ Discussion de votre projet via WhatsApp</p>
+<p>2️⃣ Création du design + validation</p>
+<p>3️⃣ Développement du site</p>
+<p>4️⃣ Livraison + support</p>
+
+</div>
+</section>
 <!-- PROJECTS -->
 <section id="projects" class="projects">
 <h2>🚀 Projets</h2>
@@ -307,7 +331,15 @@ html {
 Réponse garantie en moins de 24h ⚡
 </p>
 </section>
+<section style="padding:60px;text-align:center;">
+<h2>🛡️ Mes garanties</h2>
 
+<p>✔ Livraison rapide</p>
+<p>✔ Design moderne garanti</p>
+<p>✔ Support après livraison</p>
+<p>✔ Prix fixe sans surprise</p>
+
+</section>
 <!-- CONTACT -->
 <section id="contact" style="padding:60px;text-align:center;">
 <h2>📩 Demande de devis</h2>

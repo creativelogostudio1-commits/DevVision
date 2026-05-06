@@ -3,49 +3,47 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DevVision - Portfolio</title>
+<title>DevVision ULTRA</title>
 
 <style>
 
 /* RESET */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
 
+/* BODY */
 body{
     background:#020617;
     color:white;
 }
 
-/* NAVBAR */
+/* NAV */
 nav{
     display:flex;
     justify-content:space-between;
-    align-items:center;
-    padding:15px 40px;
+    padding:15px 30px;
+    background:rgba(0,0,0,0.7);
     position:sticky;
     top:0;
-    background:rgba(0,0,0,0.7);
     backdrop-filter:blur(10px);
     z-index:1000;
 }
 
-nav h2{
-    color:#38bdf8;
+nav h2{color:#38bdf8;}
+
+.nav-links{
+    display:flex;
 }
 
-nav a{
-    color:white;
+.nav-links a{
     margin:10px;
     text-decoration:none;
-    transition:0.3s;
+    color:white;
 }
 
-nav a:hover{
-    color:#38bdf8;
+.menu-btn{
+    display:none;
+    font-size:25px;
+    cursor:pointer;
 }
 
 /* HERO */
@@ -53,27 +51,13 @@ nav a:hover{
     display:flex;
     flex-wrap:wrap;
     align-items:center;
-    padding:80px 40px;
+    padding:80px 30px;
 }
 
-.hero-text{
-    flex:1;
-}
+.hero-text{flex:1;}
+.hero-text h1{font-size:50px;}
+.hero-text span{color:#38bdf8;}
 
-.hero-text h1{
-    font-size:50px;
-    margin:20px 0;
-}
-
-.hero-text span{
-    color:#38bdf8;
-}
-
-.hero-text p{
-    opacity:0.7;
-}
-
-/* BUTTONS */
 .btn{
     display:inline-block;
     margin-top:20px;
@@ -82,7 +66,6 @@ nav a:hover{
     color:black;
     border-radius:8px;
     text-decoration:none;
-    font-weight:bold;
 }
 
 .btn-outline{
@@ -90,16 +73,41 @@ nav a:hover{
     padding:12px 25px;
     border-radius:8px;
     margin-left:10px;
-    text-decoration:none;
     color:#38bdf8;
+    text-decoration:none;
 }
 
-/* HERO IMAGE */
 .hero img{
     flex:1;
     max-width:500px;
     border-radius:15px;
-    box-shadow:0 0 40px rgba(56,189,248,0.3);
+}
+
+/* SERVICES */
+.services{
+    padding:60px;
+    text-align:center;
+}
+
+.service-grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content:center;
+}
+
+.service{
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+    width:260px;
+    transition:0.3s;
+    cursor:pointer;
+}
+
+.service:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px rgba(56,189,248,0.4);
 }
 
 /* PROJECTS */
@@ -111,21 +119,15 @@ nav a:hover{
 .cards{
     display:flex;
     flex-wrap:wrap;
+    gap:20px;
     justify-content:center;
-    gap:25px;
 }
 
 .card{
+    width:280px;
     background:#0f172a;
-    padding:20px;
+    padding:15px;
     border-radius:15px;
-    width:300px;
-    transition:0.3s;
-}
-
-.card:hover{
-    transform:translateY(-10px) scale(1.05);
-    box-shadow:0 0 25px rgba(56,189,248,0.3);
 }
 
 .card img{
@@ -133,45 +135,13 @@ nav a:hover{
     border-radius:10px;
 }
 
-/* GALERIE */
-.galerie{
-    padding:60px;
-    text-align:center;
-}
-
-.grid{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
-}
-
-.grid .card{
-    width:280px;
-}
-
-/* FEATURES */
-.features{
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    padding:50px;
-    flex-wrap:wrap;
-}
-
-.features div{
-    background:#0f172a;
-    padding:20px;
-    border-radius:10px;
-}
-
 /* CONTACT */
-input, textarea{
+input,textarea{
     width:80%;
     padding:12px;
     margin:10px;
-    border:none;
     border-radius:8px;
+    border:none;
 }
 
 /* WHATSAPP */
@@ -180,23 +150,25 @@ input, textarea{
     bottom:20px;
     right:20px;
     background:#25D366;
-    padding:15px 20px;
+    padding:15px;
     border-radius:50px;
-    color:white;
     text-decoration:none;
-    font-weight:bold;
+    color:white;
 }
 
-/* SCROLL ANIMATION */
-.reveal{
-    opacity:0;
-    transform:translateY(50px);
-    transition:1s;
-}
+/* MOBILE */
+@media(max-width:768px){
+    .nav-links{
+        display:none;
+        flex-direction:column;
+        background:#000;
+        position:absolute;
+        top:60px;
+        right:0;
+        width:200px;
+    }
 
-.reveal.active{
-    opacity:1;
-    transform:translateY(0);
+    .menu-btn{display:block;}
 }
 
 </style>
@@ -207,20 +179,23 @@ input, textarea{
 <!-- NAV -->
 <nav>
 <h2>DevVision</h2>
-<div>
+
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+<div class="nav-links" id="menu">
 <a href="#">Accueil</a>
+<a href="#services">Services</a>
 <a href="#projects">Projets</a>
 <a href="#contact">Contact</a>
 </div>
 </nav>
 
 <!-- HERO -->
-<section class="hero reveal">
+<section class="hero">
 
 <div class="hero-text">
 <p>💻 Développeur Web</p>
-<h1>Je construis des expériences <span>web modernes</span></h1>
-<p>Sites rapides, professionnels et optimisés pour le business.</p>
+<h1>Je crée des solutions <span>digitales puissantes</span></h1>
 
 <a class="btn" href="#projects">Voir mes projets</a>
 <a class="btn-outline" href="#">Télécharger CV</a>
@@ -230,100 +205,85 @@ input, textarea{
 
 </section>
 
-<!-- GALERIE -->
-<section class="galerie reveal">
-<h2>🚀 Galerie</h2>
+<!-- SERVICES -->
+<section id="services" class="services">
+<h2>💼 Mes Services</h2>
 
-<div class="grid">
+<div class="service-grid">
 
-<div class="card">
-<img src="images/profil-dev.jpg">
-<h3>Profil Développeur</h3>
+<div class="service" onclick="alert('Création de site professionnel')">
+🌐 Création de site web
 </div>
 
-<div class="card">
-<img src="images/projet-web.jpg">
-<h3>Projet Web</h3>
+<div class="service" onclick="alert('Applications JavaScript')">
+⚙️ Applications Web
 </div>
 
-<div class="card">
-<img src="images/banniere-cservice.jpg">
-<h3>C-SERVICE Business</h3>
+<div class="service" onclick="alert('Design moderne')">
+🎨 UI/UX Design
+</div>
+
+<div class="service" onclick="alert('Gestion réseaux')">
+📱 Réseaux sociaux
 </div>
 
 </div>
 </section>
 
 <!-- PROJECTS -->
-<section id="projects" class="projects reveal">
-
-<h2>Mes Projets</h2>
+<section id="projects" class="projects">
+<h2>🚀 Projets</h2>
 
 <div class="cards">
 
 <div class="card">
 <img src="images/profil-dev.jpg">
 <h3>Portfolio</h3>
-<p>Site professionnel</p>
-<a class="btn" href="#">Voir</a>
 </div>
 
 <div class="card">
 <img src="images/projet-web.jpg">
 <h3>Dashboard</h3>
-<p>Interface moderne</p>
-<a class="btn" href="#">Voir</a>
 </div>
 
 <div class="card">
 <img src="images/banniere-cservice.jpg">
-<h3>E-commerce</h3>
-<p>Boutique en ligne</p>
-<a class="btn" href="#">Voir</a>
+<h3>C-Service</h3>
 </div>
 
 </div>
-
-</section>
-
-<!-- FEATURES -->
-<section class="features reveal">
-<div>⚡ Rapide</div>
-<div>📱 Responsive</div>
-<div>💻 Code propre</div>
-<div>🚀 Livraison rapide</div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="reveal" style="padding:60px; text-align:center;">
+<section id="contact" style="padding:60px;text-align:center;">
 <h2>Contact</h2>
 
 <input placeholder="Nom"><br>
 <input placeholder="Email"><br>
 <textarea placeholder="Message"></textarea><br>
 
-<button class="btn">Envoyer</button>
+<button class="btn" onclick="sendWhatsApp()">Envoyer via WhatsApp</button>
 
 </section>
 
 <!-- WHATSAPP -->
-<a class="whatsapp" href="https://wa.me/243848681325?text=Bonjour%20je%20veux%20un%20site">WhatsApp</a>
+<a class="whatsapp" href="https://wa.me/243848681325">💬</a>
 
 <!-- SCRIPT -->
 <script>
 
-window.addEventListener('scroll', function(){
-    let reveals = document.querySelectorAll('.reveal');
+function toggleMenu(){
+    let menu = document.getElementById("menu");
+    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+}
 
-    reveals.forEach(el => {
-        let windowHeight = window.innerHeight;
-        let elementTop = el.getBoundingClientRect().top;
+function sendWhatsApp(){
+    let nom = document.querySelector('input').value;
+    let message = document.querySelector('textarea').value;
 
-        if(elementTop < windowHeight - 100){
-            el.classList.add('active');
-        }
-    });
-});
+    let url = "https://wa.me/243848681325?text=Nom:"+nom+" Message:"+message;
+    window.open(url);
+}
 
 </script>
 
